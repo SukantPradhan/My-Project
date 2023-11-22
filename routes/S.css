@@ -1,0 +1,40 @@
+h1{
+    text-transform: uppercase;
+    color: rgba(74, 4, 4, 0.886);
+    text-align: center;
+}
+body{
+    background-image:url("Vimg4.jpg");
+    background-size: cover;
+    lighting-color: aquamarine;
+    line-height: 1.5em;
+}
+#q{
+    height: 530px;
+    width: 450px;
+    text-align: center;
+    /* background-origin: padding-box; */
+    border: 2px solid black;
+    margin-left: 503px;
+    background-image: url("vote_img2.jpg");
+    background-size: cover;
+    border-radius: 4%;
+} 
+label{
+    color: rgb(52, 3, 3);
+    border-width: 20px;
+    border-radius: 5%;
+}
+.error {
+     color: Red;
+     }
+.success{
+    color:green;
+}
+.but{
+    border-radius: 9px;
+    width: 100px;
+    height: 40px;
+    font-size: 17px;
+    margin: 22px 20px;
+}

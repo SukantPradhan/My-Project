@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting-Registration</title>
+    <link rel="Stylesheet" href="S.css">
+</head>
+<body>
+
+    <h1>Online Voting System</h1><hr>
+    <h1>Registration</h1><br>
+   
+     <div id="q">
+     <form action="/action.php" name="Myform" onsubmit="Validateform()" method="post"><br>
+                Name :
+                <input type="text" name="First Name" placeholder="Enter First Name" required>
+                <input type="text" name="Last Name" placeholder="Enter Last Name" required><br><br>
+        <div id="txtadhar">
+                Aadhaar Number:
+                <input type="number" name="adhar"  />
+                <b><span  class="formerrors"></span></b>
+        </div><br>
+        <!-- <input type="button" id="btnSubmit" value="Verify id" onclick="ValidateAadhaar()" required=""/>onclick="ValidateAadhaar()" -->
+        <div id="Mob">
+                Mobile No :
+                <input type="number"  name="Mobile" placeholder="Enter Mobile" >
+                <span  class="formerrors"></span>
+        </div><br>
+                Email :
+                <input type="email" name="Email" placeholder="Email" ><br><br>
+        <div id="passerror">
+                Password :
+                <input type="password" name="password"  placeholder="New password" >
+                <span  class="formerrors"></span>
+        </div><br>
+        <div id="cpasserror">
+                 Confirm Password :
+                <input type="password" name="Confirm password" id="cpass" placeholder="Confirm password" >
+                <span  class="formerrors"></span>
+        </div><br>
+
+                 Address :
+                <input type="text" name="Address" placeholder="Address"><br><br>
+                Image :
+                <input type="file" name="Photo"><br><br>
+                Select :
+        <select name="role" required="">
+            <option value="1">Voter</option>
+            <option value="2">Group</option>
+        </select><br>
+            <input class="but" type="submit" value="Submit">
+        <!-- Already User :<a href="Login.html">Login Here</a> -->
+     </form>
+    </div>
+   
+</body>
+<script type="">
+    function clearform(){
+    let err=document.getElementsByClassName('formerrors');
+    for(let item of err)
+    {
+        item.innerHTML="";
+    }
+    }
+function seterror(id,error) {
+     element = document.getElementById(id);
+     element.getElementsByClassName('formerrors')[0].innerHTML= error;
+}
+function Validateform() {
+    var returnval=true;
+    //clearform();
+    var aadhaar = document.form['Myform']["adhar"].value;
+    // let expr = /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
+    // if (!expr.test(aadhaar)) {
+        if(aadhaar.length != 12){
+        // lblError.innerHTML = "Invalid Id";
+        seterror("txtadhar","Mobile no should be 10 digits.");
+        returnval=false;
+    }
+    var mob = document.forms['Myform']["mobile"].value;
+    if (mob.length != 10) {
+        
+        seterror("mob","Mobile no should be 10 digits");
+        returnval=false;
+    }
+    var password =document.forms['Myform']["pass"].value;
+    if(password.length<6)
+    {
+        seterror("passerror","Password should be at least 6 characters long");
+        returnval=false;
+    }
+    var cpassword =document.forms['Myform']["cpass"].value;
+    if(cpassword != password)
+    {
+        seterror("cpasserror","Password and confirm password should match");
+        returnval=false;
+    }
+    return returnval;
+}
+</script>
+</html>

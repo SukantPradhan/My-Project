@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting-Registration</title>
+    <link rel="Stylesheet" href="Style.css">
+    <script type="text/javascript">
+      function seterror(id,error)
+      {
+         element = document.getElementById(id);
+         element.getElementById("formerrors")[0].innerHTML= error;
+      }
+     function validateForm() {
+      let returnval=false;
+      let x = document.forms["myForm"]["Mobile"].value;
+      if (x == "") {
+      alert("Number must be filled out");
+      return false;
+      }
+      if(x.length != 10)
+      {
+         seterror("mob","Mobile no. should be 10 digit");
+         returnval=false;
+      }
+      return returnval;
+   }
+    </script>
+ </head>
+ <body>
+    <h1 style="text-align: center;">Online Voting System</h1><hr>
+    <h2>Login</h2>
+    <div id="parent">
+    <div id="child" style="width: 300px">
+      <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"><br>
+         <div id="Mob">
+            Mobile No :
+            <input type="number"  name="Mobile" placeholder="Enter Mobile" >
+            <span  class="formerrors"></span>
+         </div><br><br>
+       
+        <div id="passerror">
+            Password :
+            <input type="password" name="password"  placeholder="New password" >
+            <span  class="formerrors"></span>
+        </div><br><br>
+         <!-- Name: <input type="text" name="fname"> -->
+         <input type="submit" value="Submit">
+         </form><br><br>
+         New user :<a href="Registration.html">Registration Here</a>
+    <!-- <form action="a" name="FORM" onsubmit="return Validateform()">
+      <div id="Mob">
+         Mobile No :
+         <input type="number"  name="Mobile" placeholder="Enter Mobile" >
+         <span  class="formerrors"></span>
+      </div><br>
+    
+     <div id="passerror">
+         Password :
+         <input type="password" name="password"  placeholder="New password" >
+         <span  class="formerrors"></span>
+     </div><br>
+     
+     <input type="button" name="Login"><br>
+     New user :<a href="routes/Registration.html">Registration Here</a>
+    </form> -->
+    </div>
+    
+  </body>
+</html>

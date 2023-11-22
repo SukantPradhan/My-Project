@@ -1,0 +1,36 @@
+*{
+    text-align: center;
+}
+h1{
+   text-align: center; 
+   text-transform: uppercase;
+   color: rgba(74, 4, 4, 0.886);
+}
+h3{
+    text-decoration: underline;
+}
+body{
+    background-image:url("Vimg6.jpg") ;
+    background-size: cover;
+}
+#child{
+    text-align: center;
+    height: 360px;
+    width: 300px;
+    margin-left: 550px;
+    color: rgb(68, 29, 7);
+}
+#parent{
+    width: 400px;
+    background-image: url("man.jpg");
+    background-size: cover;
+}
+.log{
+     border-radius: 9px;
+    width: 100px;
+    height: 40px;
+    font-size: 25px;
+    margin: 22px 20px;
+}
+
+
